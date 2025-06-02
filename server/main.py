@@ -1,15 +1,15 @@
-from typing import Union
+from fastapi import FastAPI;
+from app.api import test;
+# from app.models import User, Plasmid;
+from app.models.model_user import User;
+from app.models.model_plasmid import Plasmid;
+from app.db.database import Base, engine;
 
-from fastapi import FastAPI
+app = FastAPI();
 
-app = FastAPI()
+print("Resetting database schema...");
+Base.metadata.drop_all(bind=engine);
+Base.metadata.create_all(bind=engine);
+print("Done resetting tables.");
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+# app.include_router(test.router)
