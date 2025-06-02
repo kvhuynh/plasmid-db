@@ -1,11 +1,13 @@
 from pydantic import BaseModel
 
-class User_Base(BaseModel):
+class UserBase(BaseModel):
     name: str;
     role: str;
 
+class UserCreate(UserBase):
+    pass;
 
-class User(User_Base):
+class User(UserBase):
     id: int;    
     
     class Config:

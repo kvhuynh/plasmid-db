@@ -9,4 +9,4 @@ class User(Base):
     name = Column(String(255), index=True);
     role = Column(String(255));
     plasmids = relationship("Plasmid", back_populates="owner")
-    # owner_id = Column(Integer, ForeignKey("users.id"))
+    
