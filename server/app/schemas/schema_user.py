@@ -1,13 +1,13 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, EmailStr;
 
 class UserBase(BaseModel):
-    # user_name: str;
-    # email: str TODO
     name: str;
+    email: EmailStr;
     role: str;
 
 class UserLogin(BaseModel):
-    name: str
+    email: EmailStr;
+    password: str;
 
 class UserCreate(UserBase):
     password: str = Field(..., min_length=12, max_length=128);

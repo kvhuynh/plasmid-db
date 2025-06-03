@@ -13,7 +13,8 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     return handle_create_user(user, db);
 
 @router.post("/user/login", response_model=User)
-def login_user()
+def login_user():
+    pass
 
 # @router.post("/plasmid/create", response_model=Plasmid)
 # def create_plasmid(plasmid: PlasmidCreate, db: Session = Depends(get_db)):
