@@ -12,6 +12,9 @@ router = APIRouter(prefix="/api/v1", tags=["Plasmids"]);
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     return handle_create_user(user, db);
 
+@router.post("/user/login", response_model=User)
+def login_user()
+
 # @router.post("/plasmid/create", response_model=Plasmid)
 # def create_plasmid(plasmid: PlasmidCreate, db: Session = Depends(get_db)):
 #     return crud.create_plasmid(db, plasmid, user_id=1)  # TODO: get real user

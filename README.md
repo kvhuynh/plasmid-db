@@ -8,4 +8,4 @@ POST http://127.0.0.1:8000/api/v1/user/create for testing user creation endpoint
 
 need to implement password hashing and field validation
 
-pip install fastapi[all] uvicorn sqlalchemy passlib[bcrypt]
+pip install fastapi[all] uvicorn sqlalchemy passlib[bcrypt] python-jose[cryptography]
